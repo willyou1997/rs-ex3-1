@@ -100,11 +100,13 @@ public class EX1 {
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		String str = s.nextLine();
+		str = str.replaceAll("[^A-Za-z., \n?!:;¡ª_(){}\"\'-]","").replaceAll("[^A-Za-z]"," ").replaceAll(" +"," ");
 		String[] x;
 		String result = "";
 		x = str.split(" ");
 		for(int i=0; i<x.length-1;i++)
 		{
+			
 			result = result + x[i] +" ";
 			int len[] = getBridgeWords(x[i],x[i+1],arrays);
 			if(len[0] != 100)
@@ -143,7 +145,7 @@ public class EX1 {
 		{
 			for(int j = 1; j < x1[0]; j++)
 			{
-				if((x2[i] - x1[j] < Bridge[0]) && (x2[i] -x1[j] > 1))
+				if((x2[i] - x1[j] < Bridge[0]) && (x2[i] -x1[j] > 1) && (x2[i] - x1[j] < 4))
 				{
 					Bridge[1] = x1[j];
 					Bridge[2] = x2[i];
@@ -220,6 +222,7 @@ public class EX1 {
 		String word2 = input.next();
     	int begin = getPos(word1);
 		int end = getPos(word2);
+		//System.out.print(begin+"\n");
 		if((begin == -1) || (end == -1))
 		{
 			System.out.print("No \""+word1+"\" or \""+word2+"\" in graph!\n");
@@ -243,6 +246,7 @@ public class EX1 {
         
         System.out.print(mVexs[pathPos[pathPos.length-1]]+"\n");
         System.out.println("weight:"+ dist[begin][end]);  
+        
     }  
 	
 	
@@ -321,7 +325,7 @@ public class EX1 {
     
 	public static void main(String[] args) throws IOException
 	{
-		BufferedReader inFile = new BufferedReader(new FileReader("example.txt"));
+		BufferedReader inFile = new BufferedReader(new FileReader("G:\\Lab1.txt"));
 		String str = "";
 		String result = "";
 		while((str = inFile.readLine()) != null)
@@ -340,6 +344,7 @@ public class EX1 {
         mVexs = (String[])list.toArray(new String[list.size()]);
 		vlen = mVexs.length;
         // ³õÊ¼»¯"±ß"
+		//System.out.print(vlen);
         mMatrix = new int[vlen][vlen];
         for (int i = 0; i < vlen; i++)
         {
