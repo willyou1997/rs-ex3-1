@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class EX1 {
-     private static int MAX = 100; 
-     private static int INF = 99; 
+     private static final int MAX = 100; 
+     private static final int INF = 99; 
      private static String[] mVexs;       // 顶点集合
      private static int[][] mMatrix;  // 邻接矩阵
      private static int vlen; 
@@ -15,7 +15,7 @@ public class EX1 {
      static BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
 
-  public static void ShowAdjacencyMatrix() {
+  public static void showAdjacencyMatrix() {
     System.out.print("1.Graph\n");
     for (int i = 0; i < vlen; i++) {
       for (int j = 0; j < vlen; j++) {
@@ -30,7 +30,7 @@ public class EX1 {
     System.out.print("\n2.showDirctedGraph\n");
     GraphViz gviz = new GraphViz("G:\\",
         "F:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe");
-    gviz.start_graph();
+    gviz.startgraph();
     for (int i = 0; i < vlen; i++) {
       for (int j = 0; j < vlen; j++) {
         if (mMatrix[i][j] != 0 && mMatrix[i][j] != INF) {
@@ -38,7 +38,7 @@ public class EX1 {
         }
       }
     }
-    gviz.end_graph();
+    gviz.endgraph();
     try {
       gviz.run();
     } catch (Exception e) {
@@ -335,7 +335,7 @@ public class EX1 {
       switch (choice) {
         case "1":
         {
-          ShowAdjacencyMatrix();
+          showAdjacencyMatrix();
           break;
         }
         case "2":

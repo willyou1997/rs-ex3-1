@@ -68,11 +68,11 @@ import  java.io.IOException;
         graph.append('\n');
     }
 
-    public void start_graph() {
+    public void startgraph() {
         graph.append("digraph G {\n") ;
     }
 
-    public void end_graph() {
+    public void endgraph() {
         graph.append("}") ;
     }   
 } 
