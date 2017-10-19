@@ -134,7 +134,7 @@ public class EX1 {
     
     private static int[] getBridgeWords(String word1, String word2, String[] arrays)
     {
-      int[] x1 = getArrayPos(word1, arrays);
+    int[] x1 = getArrayPos(word1, arrays);
     int[] x2 = getArrayPos(word2, arrays);
     int[] Bridge = new int[3];
     Bridge[0] = MAX;
@@ -173,6 +173,7 @@ public class EX1 {
   public static  void findCheapestPath(int begin,int end)
   {  
         floyd();
+        result.clear();
         result.add(begin);  
         findPath(begin,end); 
         result.add(end);  
