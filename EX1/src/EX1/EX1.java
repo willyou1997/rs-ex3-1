@@ -48,10 +48,10 @@ public class EX1 {
 
 
   private static void querybirdgeWords(String[] arrays) {
-	  @SuppressWarnings("resource")
-	  Scanner input = new Scanner(System.in);
-	  System.out.print("\n3.birdge Words\nPlease input two words and"
-	          + "follow is the birdge words between the words you input.\n");
+      @SuppressWarnings("resource")
+      Scanner input = new Scanner(System.in);
+      System.out.print("\n3.birdge Words\nPlease input two words and"
+      + "follow is the birdge words between the words you input.\n");
       String  word1 = input.next();
       String  word2 = input.next();
     if ((getPos(word1) == -1) || (getPos(word2) == -1)) {
@@ -64,33 +64,33 @@ public class EX1 {
           + "\" to \"" + word2 + "\"!\n");
     } else {
       System.out.print("The birdge words from \"" + word1 
-          + "\" to \"" + word2 + "\" are: "+x);
+          + "\" to \"" + word2 + "\" are: " + x);
     }
     System.out.print("\n");
   }
 
 
   private static void getNewWords(String[] arrays) {
-	System.out.print("\n4.Generate New Text.\nPlease input a String:\n");
+    System.out.print("\n4.Generate New Text.\nPlease input a String:\n");
     @SuppressWarnings("resource")
     Scanner s = new Scanner(System.in);
     String str = s.nextLine();
- 
+    String[] x,y;
     str = str.replaceAll("[^A-Za-z., \n?!:;¡ª_(){}\"\'-]", "")
         .replaceAll("[^A-Za-z]", " ").replaceAll(" +", " ");
-    String[] x,y;
+    
     String result = "";
     x = str.split(" ");
-    result = x[0]+" ";
+    result = x[0] + " ";
     for (int i = 0; i < x.length - 1; i++) {
       String len = getbirdgeWords(x[i], x[i + 1], arrays);
       
       if (str == null || str.length() <= 0) {
-        result += x[i+1] + " ";
+        result += x[i + 1] + " ";
       }
       else {
-    	y=len.split(" ");
-        result += y[0] + " " + x[i+1]+" ";
+        y = len.split(" ");
+        result += y[0] + " " + x[i + 1] + " ";
       }
     }
     System.out.print(result);
@@ -110,15 +110,13 @@ public class EX1 {
   private static String getbirdgeWords(String word1, String word2, String[] arrays) {
     int[] birdge  = new int[3];
     int x,y;
-    String blank="";
-    x=getPos(word1);
-    y=getPos(word2);
-    for(int i=0;i<vlen;i++)
-    {
-    	if(mMatrix[x][i]==1 && mMatrix[i][y]==1)
-    	{
-    		blank+=mVexs[i]+" ";
-    	}
+    String blank = "";
+    x = getPos(word1);
+    y = getPos(word2);
+    for (int i = 0;i < vlen; i++) {
+       if (mMatrix[x][i] == 1 && mMatrix[i][y] == 1) {
+           blank += mVexs[i] + " ";
+        }
     }
     return blank;
   }
@@ -180,8 +178,8 @@ public class EX1 {
 
 
   public static void calcShortestPath() {
-	  @SuppressWarnings("resource")
-	    Scanner input = new Scanner(System.in);
+	@SuppressWarnings("resource")
+	Scanner input = new Scanner(System.in);
     System.out.print("\n\n5.Shortest Path\n");
     System.out.print("Input the beginning word and the ending word:\n");
     String  word1 = input.next();
@@ -339,7 +337,6 @@ public class EX1 {
         }
         case "5":
         {
-    	 
           calcShortestPath();
           break;
         }
