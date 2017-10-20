@@ -108,7 +108,6 @@ public class EX1 {
 
 
   private static String getbirdgeWords(String word1, String word2, String[] arrays) {
-    int[] birdge  = new int[3];
     int x,y;
     String blank = "";
     x = getPos(word1);
@@ -119,20 +118,6 @@ public class EX1 {
         }
     }
     return blank;
-  }
-
-
-  private static int[] getArrayPos(String x, String[] arrays) {
-    int []arrayPos  = new int[10];
-    int num   = 1;
-    for (int i = 0; i < arrays.length; i++) {
-      if (arrays[i].hashCode() == x.hashCode()) {
-        arrayPos[num] = i;
-        num++;
-      }
-    }
-    arrayPos[0] = num;
-    return (arrayPos);
   }
 
   public static void findCheapestPath(int begin, int end) {
