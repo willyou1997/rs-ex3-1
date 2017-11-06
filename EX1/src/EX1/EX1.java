@@ -223,7 +223,7 @@ public class EX1 {
   }
 
 
-  public static void calcShortestPath() {
+  public static String calcShortestPath() {
 	@SuppressWarnings("resource")
 	Scanner input = new Scanner(System.in);
     System.out.print("\n\n5.Shortest Path\n");
@@ -233,28 +233,41 @@ public class EX1 {
     int begin = getPos(word1);
     int end = getPos(word2);
     /* System.out.print(begin+"\n"); */
-    if ((begin == -1) || (end == -1)) {
-      System.out.print("No \"" + word1 + "\" or \"" + word2 + "\" in graph!\n");
-      return;
+    String blank = "";
+    
+    
+    if(begin!=-1 && end!=-1)
+    {
+    	findCheapestPath(begin, end);
+	    if (dist[begin][end] == 99) {
+	      /*System.out.print("There is no path between \"" + word1
+	          + "\" and \"" + word2 + "\".");
+	      return;*/
+	      blank = "There is no path between \"" + word1
+	              + "\" and \"" + word2 + "\".";
+	    }
+	    blank = "\"" + word1 + "\"" + "->" 
+	    	    + "\"" + word2 + "\"" + " ,the cheapest path is:";
+	    /*System.out.println("\"" + word1 + "\"" + "->" 
+	    + "\"" + word2 + "\"" + " ,the cheapest path is:");*/
+	    /* List<Integer> list=result; */
+	    Integer[] pathPos = new Integer[result.size()];
+	    pathPos     = (Integer[])result.toArray(pathPos);
+	    for (int i = 0; i < pathPos.length - 1; i++) {
+	      //System.out.print(mVexs[pathPos[i]] + " --> ");
+	    	blank+=mVexs[pathPos[i]] + " --> ";
+	    }
+	    blank += mVexs[pathPos[pathPos.length - 1]] + "\n";
+	    blank += "weight:" + dist[begin][end];
     }
-    findCheapestPath(begin, end);
-    if (dist[begin][end] == 99) {
-      System.out.print("There is no path between \"" + word1
-          + "\" and \"" + word2 + "\".");
-      return;
-    }
-
-    System.out.println("\"" + word1 + "\"" + "->" 
-    + "\"" + word2 + "\"" + " ,the cheapest path is:");
-    /* List<Integer> list=result; */
-    Integer[] pathPos = new Integer[result.size()];
-    pathPos     = (Integer[])result.toArray(pathPos);
-    for (int i = 0; i < pathPos.length - 1; i++) {
-      System.out.print(mVexs[pathPos[i]] + " --> ");
-    }
-
-    System.out.print(mVexs[pathPos[pathPos.length - 1]] + "\n");
-    System.out.println("weight:" + dist[begin][end]);
+     else{
+        //System.out.print("No \"" + word1 + "\" or \"" + word2 + "\" in graph!\n");
+        //return;
+        blank = "No \"" + word1 + "\" or \"" + word2 + "\" in graph!\n";
+      }
+    return blank;
+    //System.out.print(mVexs[pathPos[pathPos.length - 1]] + "\n");
+    //System.out.println("weight:" + dist[begin][end]);
   }
 
 
@@ -352,7 +365,8 @@ public class EX1 {
         }
         case "5":
         {
-          calcShortestPath();
+          String s = calcShortestPath();
+          System.out.print(s);
           break;
         }
         case "6":

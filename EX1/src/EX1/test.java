@@ -18,7 +18,6 @@ import org.junit.Test;
 	public void test2() throws IOException {
 		String a = abc.querybirdgeWords();
 		assertEquals("No birdge words from \"time\" to \"by\"!\n",a);
-		//fail("Not yet implemented");
 	}
 
 }*/
@@ -40,21 +39,6 @@ import org.junit.Test;
 }*/
 
 
-/*public class test {
-	EX1 abc = new EX1();
-	@Before 
-	public void test1() throws IOException
-	{
-		abc.Input();
-	}
-	@Test
-	public void test2() throws IOException {
-		String a = abc.querybirdgeWords();
-		assertEquals("No birdge words from \"time\" to \"by\"!\n",a);
-		
-	}
-
-}*/
 
 
 public class test {
