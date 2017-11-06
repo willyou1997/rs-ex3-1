@@ -1,2 +1,0 @@
-resources->are are->developed to->hello hello->to
-ha
