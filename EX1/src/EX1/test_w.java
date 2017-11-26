@@ -23,13 +23,13 @@ public class test_w {
 	public void test2() throws FileNotFoundException, IOException
 	{
 		String s = t.calcShortestPath();
-<<<<<<< HEAD
+
 		assertEquals("\"services\"->\"study\" ,the cheapest path is:services --> in --> the --> study\n" + 
 				"weight:3",s);
 	}
 
 }
-=======
+
 		assertEquals("There is no path between \"this\" and \"study\".",s);
 	}
 
@@ -87,4 +87,4 @@ public class test_w {
 	}
 
 }*/
->>>>>>> lab6w
+

@@ -246,17 +246,16 @@ public class EX1 {
 	      blank = "There is no path between \"" + word1
 	              + "\" and \"" + word2 + "\".";
 	    }
-<<<<<<< HEAD
-=======
+
 	    else {
->>>>>>> lab6w
+
 	    blank = "\"" + word1 + "\"" + "->" 
 	    	    + "\"" + word2 + "\"" + " ,the cheapest path is:";
 	    /*System.out.println("\"" + word1 + "\"" + "->" 
 	    + "\"" + word2 + "\"" + " ,the cheapest path is:");*/
 	    /* List<Integer> list=result; */
 	    Integer[] pathPos = new Integer[result.size()];
-<<<<<<< HEAD
+
 	    pathPos     = (Integer[])result.toArray(pathPos);
 	    for (int i = 0; i < pathPos.length - 1; i++) {
 	      //System.out.print(mVexs[pathPos[i]] + " --> ");
@@ -264,7 +263,7 @@ public class EX1 {
 	    }
 	    blank += mVexs[pathPos[pathPos.length - 1]] + "\n";
 	    blank += "weight:" + dist[begin][end];
-=======
+
 		    pathPos     = (Integer[])result.toArray(pathPos);
 		    for (int i = 0; i < pathPos.length - 1; i++) {
 		      //System.out.print(mVexs[pathPos[i]] + " --> ");
@@ -273,7 +272,7 @@ public class EX1 {
 		    blank += mVexs[pathPos[pathPos.length - 1]] + "\n";
 		    blank += "weight:" + dist[begin][end];
 	    }
->>>>>>> lab6w
+
     }
      else{
         //System.out.print("No \"" + word1 + "\" or \"" + word2 + "\" in graph!\n");
